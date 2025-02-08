@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id="root">Not Rendered</div>
+    <!-- if any error occurs in rendering it shows Not Rendered -->
+    <!-- <div id="root"></div> -->
+
+
+<script
+ crossorigin src="https://unpkg.com/react@18/umd/react.development.js">
+</script>
+<script 
+crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+</script>
+<script>
+
+    //const heading = React.createElement("h1",  {}, "Hello Everyone!");
+
+    const heading = React.createElement(
+        "h1", 
+        {
+           id: "title",  // all tag attributes comes from this object
+        }, 
+        "Hello Everyone!"
+    );
+    //h1 means it created the h1 tag, if write h6 then it is h6
+    //{}: this is like id = "title" here <h1 id = "title">Hello World</h1>
+
+    const root = ReactDOM.createRoot(document.getElementById("root")); 
+    //writing ReactDom Here because now we want to modify our dom
+    // createRoot tells react what is the root element inside my app. it is div root here.
+
+    root.render(heading);
+    //passing a react element inside the root element.
+    // it takes react element and modifies our DOM
+    // is our app have multiple root ?
+    // in our app you just see one root and one render method
+    //root is the place where react run.
+</script>
+</body>
+
+</html>
