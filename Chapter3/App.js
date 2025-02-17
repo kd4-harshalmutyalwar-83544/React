@@ -1,27 +1,27 @@
 import React from "react";	
 //import ReactDOM from "react-dom"  // before it is work but for new version following statement use.
 import ReactDOM from "react-dom/client";
-        const heading = React.createElement(
-        "h1", 
-        {
-           id: "title", 
-        }, 
-        "Heading 1 from parcel "
+   
+
+    //above heading using JSX
+    const heading = (
+         <h1 id="title" key="h1">
+            Namaste React
+            </h1>
     );
 
-    const heading2 = React.createElement(
-        "h2", 
-        {
-           id: "title", 
-        }, 
-        "Heading 2"
-    );
-
-    const container = React.createElement("div", 
-    {
-        id: "container"
-    }, [heading, heading2])  
+    // React component
+    // functional component
+    const HeaderComponent =  () => {
+       return (
+        <div>
+            {heading}
+            <h1>Namste React functional Component</h1>
+             <h2>This is a H2 tag</h2>
+             </div>
+        );
+    }
 
     const root = ReactDOM.createRoot(document.getElementById("root")); 
 
-    root.render(container);
+    root.render(<HeaderComponent/>);
